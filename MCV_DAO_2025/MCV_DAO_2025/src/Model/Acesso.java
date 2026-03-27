@@ -90,9 +90,23 @@ public class Acesso {
         this.dtUltimoAcesso = dtUltimoAcesso;
     }
      
+// Incluindo o cdUser (certifique-se de que o banco permite o insert manual se for IDENTITY)
     public String dadosSQLValues() {
-        return "'" + this.cdUser + "', '"
-                +
+        return this.cdUser + ", '" 
+                   + this.login + "', '"
+                   + this.hash + "', '"
+                   + this.tipoUser + "', '"
+                   + this.status + "', '"
+                   + this.dtUltimoAcesso + "'";
+    }
+
+    public String alteraDadosSQLValues() {
+        return "cdUser = " + this.cdUser + ", "
+             + "login = '" + this.login + "', "
+             + "hash = '" + this.hash + "', "
+             + "tipoUser = '" + this.tipoUser + "', "
+             + "status = '" + this.status + "', "
+             + "dtUltimoAcesso = '" + this.dtUltimoAcesso + "'";
     }
      
 }
