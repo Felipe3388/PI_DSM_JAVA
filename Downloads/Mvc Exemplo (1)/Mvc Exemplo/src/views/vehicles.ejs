@@ -1,0 +1,22 @@
+<h1>Veículos</h1>
+
+<form method="POST" action="/vehicles">
+    <input name="brand" placeholder="Marca">
+    <input name="model" placeholder="Modelo">
+
+    <button>Cadastrar</button>
+
+</form>
+
+<ul>
+
+    <% vehicles.forEach(v=> { %>
+        <li>
+            <%= v.brand %> - <%= v.model %>
+        </li>
+
+        <% }) %>
+
+</ul>
+
+<a href="/orders">Pedidos</a>
